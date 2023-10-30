@@ -14,4 +14,8 @@ let employee2 = {
   payRate: 43.27,
 };
 
+function printEmployee(employee) {
+  console.log(employee);
+}
 
+printEmployee(employee1);
