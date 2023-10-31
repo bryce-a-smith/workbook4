@@ -8,8 +8,12 @@ let lunch = [
 
 let subtotal = 0;
 
-for(let i = 0; i < lunch.length; i++) {
-    subtotal += lunch[i].price;
+// for(let i = 0; i < lunch.length; i++) {
+//     subtotal += lunch[i].price;
+// }
+
+for(let l of lunch) {
+    subtotal += l.price;
 }
 
 let tax = subtotal * .08;

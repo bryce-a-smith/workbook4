@@ -9,12 +9,25 @@ let students = [
   { name: "Ezra", scores: [100, 99, 100, 87] },
 ];
 
-for(let i = 0; i < students.length; i++) {
-    let sum = 0;
-    for(let j = 0; j < students[i].scores.length; j++) {
-        sum += students[i].scores[j];
-    }
-    let average = sum/students[i].scores.length;
-    console.log(`Name: ${students[i].name}`)
-    console.log(`Average Score: ${average.toFixed(2)}\n`);;
+
+for (let i = 0; i < students.length; i++) {
+  let sum = 0;
+  for (let j = 0; j < students[i].scores.length; j++) {
+    sum += students[i].scores[j];
+  }
+  let average = sum / students[i].scores.length;
+  console.log(`Name: ${students[i].name}`);
+  console.log(`Average Score: ${average.toFixed(2)}\n`);
+}
+
+
+
+for (let student of students) {
+  let sum = 0;
+  for (let score of student.scores) {
+    sum += score;
+  }
+  let average = sum / student.scores.length;
+  console.log(`Name: ${student.name}`);
+  console.log(`Average Score: ${average.toFixed(2)}\n`);
 }

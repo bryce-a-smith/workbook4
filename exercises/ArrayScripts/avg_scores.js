@@ -11,8 +11,22 @@ function getAverage(scores) {
     return sum/scores.length;
 }
 
+function getAvg(scores) {
+    let sum = 0
+    for(let score of scores) {
+        sum += score;
+    }
+    return sum/scores.length;
+}
+
 let myAverage = getAverage(myScores);
 console.log(`My average is ${myAverage.toFixed(2)}`);
 
 let yourAverage = getAverage(yourScores);
 console.log(`Your average is ${yourAverage.toFixed(2)}`);
+
+let myAvg = getAvg(myScores);
+console.log(`My average is ${myAvg.toFixed(2)}`);
+
+let yourAvg = getAvg(yourScores);
+console.log(`Your average is ${yourAvg.toFixed(2)}`);
