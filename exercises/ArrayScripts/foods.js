@@ -7,9 +7,8 @@ let lunch = [
 ];
 
 let subtotal = 0;
-let length = lunch.length;
 
-for(let i = 0; i < length; i++) {
+for(let i = 0; i < lunch.length; i++) {
     subtotal += lunch[i].price;
 }
 

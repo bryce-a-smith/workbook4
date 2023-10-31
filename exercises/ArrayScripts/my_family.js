@@ -2,8 +2,6 @@
 
 let myFamily = ["Bryce", "Allie", "Hulanna", "Emmy", "Beethoven", "Frankie", "Timmy", "Gloria"];
 
-let length = myFamily.length;
-
-for(let i = 0; i < length; i++) {
-    console.log(myFamily[i]);
+for (let i = 0; i < myFamily.length; i++) {
+  console.log(myFamily[i]);
 }
