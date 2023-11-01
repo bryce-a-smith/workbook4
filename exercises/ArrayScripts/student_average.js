@@ -30,7 +30,7 @@ function getAverageScores(students) {
   //for of loop
   for (let student of students) {
     let sum = 0;
-    for (let score of student.scores) {
+    for (const score of student.scores) {
       sum += score;
     }
     //add a new property to the students object and stores average score for each student
@@ -44,6 +44,8 @@ function displayAverageScores(students) {
     console.log(`Average Score: ${student.averageScore.toFixed(2)}\n`);
   }
 }
+
+//getAndDisplayAverages(studentsList);
 
 getAverageScores(studentsList);
 
