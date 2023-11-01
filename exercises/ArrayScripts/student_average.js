@@ -1,6 +1,6 @@
 "use strict";
 
-let students = [
+let studentsList = [
   { name: "Zephaniah", scores: [100, 96, 99, 92] },
   { name: "Pursalane", scores: [92, 89, 96, 100, 94] },
   { name: "Siddalee", scores: [86, 72, 92] },
@@ -9,25 +9,40 @@ let students = [
   { name: "Ezra", scores: [100, 99, 100, 87] },
 ];
 
+//for loop
+// for (let i = 0; i < students.length; i++) {
+//   let sum = 0;
+//   for (let j = 0; j < students[i].scores.length; j++) {
+//     sum += students[i].scores[j];
+//   }
+//   let average = sum / students[i].scores.length;
+//   console.log(`Name: ${students[i].name}`);
+//   console.log(`Average Score: ${average.toFixed(2)}\n`);
+// }
 
-for (let i = 0; i < students.length; i++) {
-  let sum = 0;
-  for (let j = 0; j < students[i].scores.length; j++) {
-    sum += students[i].scores[j];
+function getAverageScores(students) {
+  //for of loop
+  for (let student of students) {
+    let sum = 0;
+    for (let score of student.scores) {
+      sum += score;
+    }
+    //add a new property to the students object and stores average score for each student
+    student.averageScore = sum / student.scores.length;
   }
-  let average = sum / students[i].scores.length;
-  console.log(`Name: ${students[i].name}`);
-  console.log(`Average Score: ${average.toFixed(2)}\n`);
 }
 
-
-
-for (let student of students) {
-  let sum = 0;
-  for (let score of student.scores) {
-    sum += score;
+function displayAverageScores(students) {
+  for (let student of students) {
+    console.log(`Name: ${student.name}`);
+    console.log(`Average Score: ${student.averageScore.toFixed(2)}\n`);
   }
-  let average = sum / student.scores.length;
-  console.log(`Name: ${student.name}`);
-  console.log(`Average Score: ${average.toFixed(2)}\n`);
 }
+
+getAverageScores(studentsList);
+
+displayAverageScores(studentsList);
+
+//functions that are passed an object are actually passed the reference in memory to the object
+//because of this we are able to change the actual object outside the function when we change it inside the function.
+//this is why we have access to the averageScore property on each object in the array

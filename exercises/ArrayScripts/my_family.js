@@ -6,6 +6,10 @@ let myFamily = ["Bryce", "Allie", "Hulanna", "Emmy", "Beethoven", "Frankie", "Ti
 //   console.log(myFamily[i]);
 // }
 
-for(let member of myFamily) {
+function displayFamilyMembers(family) {
+  for (let member of myFamily) {
     console.log(member);
+  }
 }
+
+displayFamilyMembers(myFamily);
