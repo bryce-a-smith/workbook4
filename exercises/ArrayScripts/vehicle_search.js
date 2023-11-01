@@ -93,19 +93,45 @@ function getVehiclesWithExpiredRegistration(vehiclesArray) {
   return vehiclesWithExpiredRegistration;
 }
 
+function getVehiclesWithExpiredRegistration(vehiclesArray, date) {
+    let vehiclesWithExpiredRegistration = [];
+    const dateMili = new Date(date).getTime();
+  
+    for(const thisVehicle of vehiclesArray) {
+      if(thisVehicle.registrationExpires.getTime() > dateMili) {
+          vehiclesWithExpiredRegistration.push(thisVehicle.type);
+      }
+    }
+    return vehiclesWithExpiredRegistration;
+  }
+
 // Which vehicles that hold at least 6 people?
-function getVehiclesOfCapacity() {
-    
+function getVehiclesOfMinCapacity(vehiclesArray, minCapacity) {
+    let vehiclesOfMinCapacity = [];
+
+    for(const thisVehicle of vehiclesArray) {
+        if(thisVehicle.capacity >= minCapacity) {
+            vehiclesOfMinCapacity.push(thisVehicle.type);
+        }
+    }
+    return vehiclesOfMinCapacity;
 }
 
 // Which vehicles have license plates that end with "222"?
+function getVehicleLicensePlateEndWith(vehiclesArray, lpNum) {
+    
+}
+
+
 
 // Which vehicles are RED?
 console.log(getVehicleByColor(vehicles, "Red"));
 
 // Which vehicles have registrations that are expired?
 console.log(getVehiclesWithExpiredRegistration(vehicles));
+console.log(getVehiclesWithExpiredRegistration(vehicles, "08-31-2023"));
 
 // Which vehicles that hold at least 6 people?
+console.log(getVehiclesOfMinCapacity(vehicles, 6));
 
 // Which vehicles have license plates that end with "222"?
