@@ -67,40 +67,45 @@ let vehicles = [
   },
 ];
 
-
 // Which vehicles are RED?
 function getVehicleByColor(vehiclesArray, color) {
-    let vehiclesOfColor = [];
+  let vehiclesOfColor = [];
 
-    for(const thisVehicle of vehiclesArray) {
-        if(thisVehicle.color == color) {
-            vehiclesOfColor.push(thisVehicle.type);
-        }
+  for (const thisVehicle of vehiclesArray) {
+    if (thisVehicle.color == color) {
+      vehiclesOfColor.push(thisVehicle.type);
     }
+  }
 
-    return vehiclesOfColor;
+  return vehiclesOfColor;
 }
 
 // Which vehicles have registrations that are expired?
+function getVehiclesWithExpiredRegistration(vehiclesArray) {
+  let vehiclesWithExpiredRegistration = [];
+  const todayMili = new Date().getTime();
 
+  for(const thisVehicle of vehiclesArray) {
+    if(thisVehicle.registrationExpires.getTime() > todayMili) {
+        vehiclesWithExpiredRegistration.push(thisVehicle.type);
+    }
+  }
+  return vehiclesWithExpiredRegistration;
+}
 
 // Which vehicles that hold at least 6 people?
-
+function getVehiclesOfCapacity() {
+    
+}
 
 // Which vehicles have license plates that end with "222"?
-
-
-
-
 
 // Which vehicles are RED?
 console.log(getVehicleByColor(vehicles, "Red"));
 
 // Which vehicles have registrations that are expired?
-
+console.log(getVehiclesWithExpiredRegistration(vehicles));
 
 // Which vehicles that hold at least 6 people?
 
-
 // Which vehicles have license plates that end with "222"?
-
