@@ -119,7 +119,14 @@ function getVehiclesOfMinCapacity(vehiclesArray, minCapacity) {
 
 // Which vehicles have license plates that end with "222"?
 function getVehicleLicensePlateEndWith(vehiclesArray, lpNum) {
-    
+    let vehiclesWithLpNum = [];
+
+    for(const thisVehicle of vehiclesArray) {
+        if(thisVehicle.licenseNo.lastIndexOf(lpNum) == thisVehicle.licenseNo.length - lpNum.length) {
+            vehiclesWithLpNum.push(thisVehicle.type);
+        }
+    }
+    return vehiclesWithLpNum;
 }
 
 
@@ -135,3 +142,4 @@ console.log(getVehiclesWithExpiredRegistration(vehicles, "08-31-2023"));
 console.log(getVehiclesOfMinCapacity(vehicles, 6));
 
 // Which vehicles have license plates that end with "222"?
+console.log(getVehicleLicensePlateEndWith(vehicles, "222"));
