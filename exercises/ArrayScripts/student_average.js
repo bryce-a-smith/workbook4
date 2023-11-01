@@ -20,6 +20,7 @@ function getAndDisplayAverages(students) {
     }
     //calculate the average of this specific student's scores, using the sum we found in the inner loop
     let average = sum / students[i].scores.length;
+    //console.log this specific student's name and their average
     console.log(`Name: ${students[i].name}`);
     console.log(`Average Score: ${average.toFixed(2)}\n`);
   }
