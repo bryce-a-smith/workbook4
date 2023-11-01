@@ -9,16 +9,21 @@ let studentsList = [
   { name: "Ezra", scores: [100, 99, 100, 87] },
 ];
 
-//for loop
-// for (let i = 0; i < students.length; i++) {
-//   let sum = 0;
-//   for (let j = 0; j < students[i].scores.length; j++) {
-//     sum += students[i].scores[j];
-//   }
-//   let average = sum / students[i].scores.length;
-//   console.log(`Name: ${students[i].name}`);
-//   console.log(`Average Score: ${average.toFixed(2)}\n`);
-// }
+function getAndDisplayAverages(students) {
+  //for loops
+  //loop through each student
+  for (let i = 0; i < students.length; i++) {
+    let sum = 0;
+    //loop through this specific student's scores and add them up
+    for (let j = 0; j < students[i].scores.length; j++) {
+      sum += students[i].scores[j];
+    }
+    //calculate the average of this specific student's scores, using the sum we found in the inner loop
+    let average = sum / students[i].scores.length;
+    console.log(`Name: ${students[i].name}`);
+    console.log(`Average Score: ${average.toFixed(2)}\n`);
+  }
+}
 
 function getAverageScores(students) {
   //for of loop
