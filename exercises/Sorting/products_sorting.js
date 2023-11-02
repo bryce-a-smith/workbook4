@@ -30,6 +30,8 @@ function compareAscending(a, b) {
 //Pass named function as an argument to main function
 console.log(products.sort(compareAscending));
 
+console.log(`------------------`);
+
 //prices in descending order
 //Use an anonymous function and pass the function expression.
 console.log(products.sort(function(a, b) {
