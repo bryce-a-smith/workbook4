@@ -84,11 +84,12 @@
         //Wite functions (to handle events)
         function loadStatesList() {
           for (const state of states) {
-            console.log(state);
-            //Create option element
-            let option = document.createElement("option");
-            option.textContent = state.name;
-            option.value = state.abbrev;
+            // console.log(state);
+            // //Create option element
+            // let option = document.createElement("option");
+            // option.textContent = state.name;
+            // option.value = state.abbrev;
+            let option = new Option(state.name, state.abbrev);
             statesList.appendChild(option);
           }
         }
