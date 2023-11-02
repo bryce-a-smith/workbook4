@@ -42,6 +42,7 @@ function getMax(scores) {
 
 function getMin(scores) {
     let sortedScores = scores.sort(compareAscending);
+    //console.log(sortedScores);
     return sortedScores[0];
 }
 
@@ -69,4 +70,4 @@ let youMax = getMax(yourScores);
 console.log(`Max: ${myMax}`);
 
 let yourMin = getMin(yourScores);
-console.log(`Min: ${myMax}`);
+console.log(`Min: ${myMin}`);
