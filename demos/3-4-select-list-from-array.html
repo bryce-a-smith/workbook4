@@ -19,6 +19,8 @@
         <select id="states-list" name="states">
           <option value="">Select...</option>
         </select>
+        <button type="button" id="select-state-button">Select State</button>
+        <p id="display-paragraph"></p>
       </form>
     </main>
     <script>
@@ -80,6 +82,8 @@
       function init() {
         //Get HTML elements into variables
         const statesList = document.getElementById("states-list");
+        const selectStateButton = document.getElementById("select-state-button");
+        const displayParagraph = document.getElementById("display-paragraph");
 
         //Wite functions (to handle events)
         function loadStatesList() {
@@ -94,9 +98,14 @@
           }
         }
 
+        function displayStateInfo() {
+            displayParagraph.innerText = statesList.value;
+        }
+
         loadStatesList();
 
         //Wire up functions
+        selectStateButton.onclick = displayStateInfo;
       }
 
       window.onload = init;
